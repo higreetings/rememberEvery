@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remember Everything</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      display: inline-block;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 400px;
+      box-sizing: border-box;
+    }
+
+    input[type="text"],
+    input[type="file"] {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    a {
+      display: block;
+      margin-top: 20px;
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 3em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Remember Everything</h1>
+  <form method="post" enctype="multipart/form-data">
+    <input type="text" name="text" placeholder="Write something..."><br>
+    <input type="file" name="image"><br>
+    <input type="text" name="remark" placeholder="Add a remark..."><br>
+    <input type="submit" value="Submit">
+  </form>
+  <a href="{{ url_for('records') }}">View All Entries</a>
+</body>
+</html>
