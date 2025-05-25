@@ -107,18 +107,18 @@
         <th>Date</th>
         <th>Action</th>
       </tr>
-      {% for item in data %}
+      {% for row in data %}
       <tr>
-        <td>{{ item.text }}</td>
+        <td>{{ row[1] }}</td>
         <td>
-          {% if item.image_url %}
-            <img src="{{ url_for('static', filename='uploads/' + item.image_url.split('/')[-1]) }}">
+          {% if row[3] %}
+            <img src="{{ url_for('static', filename='uploads/' + row[3].split('/')[-1]) }}">
           {% endif %}
         </td>
-        <td>{{ item.remark }}</td>
-        <td>{{ item.date }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[4] }}</td>
         <td>
-          <form method="post" action="{{ url_for('delete', index=loop.index0) }}">
+          <form method="post" action="{{ url_for('delete', index=row[0]) }}">
             <button class="delete-button" type="submit">Delete</button>
           </form>
         </td>
